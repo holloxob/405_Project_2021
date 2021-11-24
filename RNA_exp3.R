@@ -35,5 +35,6 @@ dds <- DESeq(ddsHTSeq)
 res <- results(dds)
 
 collapse <- collapseReplicates(dds, condition)
+test <- collapse@assays@data@listData[["counts"]]
 
 
