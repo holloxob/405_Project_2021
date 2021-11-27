@@ -1,22 +1,41 @@
-library(rtracklayer)
-library(GenomicRanges)
 library(tidyverse)
-# BiocManager::install("plyranges")
-library(plyranges)
 
-# below uses the bed files before intersect
-STHSC_1 <- read_narrowpeaks("./chipseq_postintersect/STHSC/SRR1521829.narrowPeak.genes.bed")
-STHSC_2 <- read_narrowpeaks("./chipseq_postintersect/STHSC/SRR1521831.narrowPeak.genes.bed")
-STHSC <- GRangesList(STHSC_1, STHSC_2)
-peak_grangeslist <- GRangesList(STHSC)
-peak_coverage <- coverage(peak_grangeslist)
-covered_ranges <- slice(STHSC_peak_coverage, lower = 2, rangesOnly = TRUE)
+jaccard_cor <- read_csv("jaccard.csv")
+
+jaccard_cor <- column_to_rownames(jaccard_cor, "Name")
+
+jaccard_cor <- as.matrix(jaccard_cor)
+
+library(reshape2)
+melted_jaccard_cor <- melt(jaccard_cor)
+
+library(ggplot2)
+cols <- rev(rainbow(7)[-7])
+
+ggplot(data = melted_jaccard_cor, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(colour="black",size=0.25) +
+  labs(x="",y="") +
+  scale_fill_gradientn(colours = cols, limits = c(0, 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-# below uses the bed files after intersect
-STHSC_peak_files <- list.files("./chipseq_preintersect/STHSC", full.names = TRUE)
-STHSC_peak_granges <- lapply(STHSC_peak_files, import)
-STHSC_peak_grangeslist <- GRangesList(STHSC_peak_granges)
-STHSC_peak_coverage <- coverage(STHSC_peak_grangeslist)
-STHSC_covered_ranges <- slice(STHSC_peak_coverage, lower = 2, rangesOnly = TRUE)
+ggsave("chip_heatmap.pdf")
+
+
+# Euclidean distance
+dist <- dist(jaccard_cor[ , c(4:8)] , diag=TRUE)
+
+# Hierarchical Clustering with hclust
+hc <- hclust(dist)
+
+pdf("chip_dendrogram.pdf")
+# Plot the result
+plot(hc,
+     main="H3K4me1 Cluster Dendrogram",
+     ylab="",
+     xlab="",
+     axes=F,
+     sub="")
+dev.off()
+
 

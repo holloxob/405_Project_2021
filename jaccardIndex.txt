@@ -1,0 +1,110 @@
+Started script
+bedtools jaccard LTHSC and LTHSC
+intersection	union-intersection	jaccard	n_intersections
+48440	48440	1	99
+bedtools jaccard LTHSC and STHSC
+intersection	union-intersection	jaccard	n_intersections
+42322	98964	0.42765	90
+bedtools jaccard LTHSC and MPP
+intersection	union-intersection	jaccard	n_intersections
+42986	394684	0.108912	91
+bedtools jaccard LTHSC and CMP
+intersection	union-intersection	jaccard	n_intersections
+44716	68769	0.650235	92
+bedtools jaccard LTHSC and GMP
+intersection	union-intersection	jaccard	n_intersections
+42389	74022	0.572654	90
+bedtools jaccard LTHSC and BMM
+intersection	union-intersection	jaccard	n_intersections
+44320	63778	0.69491	95
+bedtools jaccard LTHSC and G
+intersection	union-intersection	jaccard	n_intersections
+42748	74498	0.573814	93
+bedtools jaccard LTHSC and M
+intersection	union-intersection	jaccard	n_intersections
+44437	65630	0.677084	95
+bedtools jaccard STHSC and STHSC
+intersection	union-intersection	jaccard	n_intersections
+92846	92846	1	264
+bedtools jaccard STHSC and MPP
+intersection	union-intersection	jaccard	n_intersections
+58102	423974	0.137041	159
+bedtools jaccard STHSC and CMP
+intersection	union-intersection	jaccard	n_intersections
+50127	107764	0.465155	106
+bedtools jaccard STHSC and GMP
+intersection	union-intersection	jaccard	n_intersections
+46731	114086	0.409612	103
+bedtools jaccard STHSC and BMM
+intersection	union-intersection	jaccard	n_intersections
+49357	103147	0.478511	107
+bedtools jaccard STHSC and G
+intersection	union-intersection	jaccard	n_intersections
+49102	112550	0.436268	109
+bedtools jaccard STHSC and M
+intersection	union-intersection	jaccard	n_intersections
+50804	103669	0.49006	111
+bedtools jaccard MPP and MPP
+intersection	union-intersection	jaccard	n_intersections
+389230	389230	1	1316
+bedtools jaccard MPP and CMP
+intersection	union-intersection	jaccard	n_intersections
+51181	403094	0.12697	109
+bedtools jaccard MPP and GMP
+intersection	union-intersection	jaccard	n_intersections
+45645	411556	0.110908	96
+bedtools jaccard MPP and BMM
+intersection	union-intersection	jaccard	n_intersections
+48362	400526	0.120746	107
+bedtools jaccard MPP and G
+intersection	union-intersection	jaccard	n_intersections
+47002	411034	0.114351	99
+bedtools jaccard MPP and M
+intersection	union-intersection	jaccard	n_intersections
+47730	403127	0.118399	101
+bedtools jaccard CMP and CMP
+intersection	union-intersection	jaccard	n_intersections
+65045	65045	1	126
+bedtools jaccard CMP and GMP
+intersection	union-intersection	jaccard	n_intersections
+52952	80064	0.661371	107
+bedtools jaccard CMP and BMM
+intersection	union-intersection	jaccard	n_intersections
+54543	70160	0.777409	115
+bedtools jaccard CMP and G
+intersection	union-intersection	jaccard	n_intersections
+55066	78785	0.69894	111
+bedtools jaccard CMP and M
+intersection	union-intersection	jaccard	n_intersections
+54688	71984	0.759724	110
+bedtools jaccard GMP and GMP
+intersection	union-intersection	jaccard	n_intersections
+67971	67971	1	135
+bedtools jaccard GMP and BMM
+intersection	union-intersection	jaccard	n_intersections
+50036	77593	0.644852	107
+bedtools jaccard GMP and G
+intersection	union-intersection	jaccard	n_intersections
+57635	79142	0.728248	119
+bedtools jaccard GMP and M
+intersection	union-intersection	jaccard	n_intersections
+53127	76471	0.694734	116
+bedtools jaccard BMM and BMM
+intersection	union-intersection	jaccard	n_intersections
+59658	59658	1	124
+bedtools jaccard BMM and G
+intersection	union-intersection	jaccard	n_intersections
+52567	75897	0.69261	113
+bedtools jaccard BMM and M
+intersection	union-intersection	jaccard	n_intersections
+54068	67217	0.80438	114
+bedtools jaccard G and G
+intersection	union-intersection	jaccard	n_intersections
+68806	68806	1	138
+bedtools jaccard G and M
+intersection	union-intersection	jaccard	n_intersections
+55458	74975	0.739687	121
+bedtools jaccard M and M
+intersection	union-intersection	jaccard	n_intersections
+61627	61627	1	127
+Finished Script

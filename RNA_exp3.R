@@ -49,24 +49,24 @@ melted_cormat <- melt(cormat)
 
 library(ggplot2)
 cols <- rev(rainbow(7)[-7])
-
-pdf("heatmap.pdf")
-
 ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) + 
   geom_tile(colour="black",size=0.25) +
   labs(x="",y="") +
-  scale_fill_gradientn(colours = cols) +
+  ggtitle("RNAseq - correlation matrix") +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  scale_fill_gradientn(colours = cols) + #limits = c(0, 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
-dev.off()
+ggsave("heatmap.pdf")
 
-pdf("dendrogram.pdf")
+
 # Euclidean distance
 dist <- dist(cormat[ , c(4:8)] , diag=TRUE)
 
 # Hierarchical Clustering with hclust
 hc <- hclust(dist)
 
+pdf("dendrogram.pdf")
 # Plot the result
 plot(hc,
      main="RNAseq Cluster Dendrogram",
